@@ -1,0 +1,87 @@
+.hero {
+    @include H1-Bold;
+}
+.subhero {
+    @include H1-Light;
+}
+.guideText {
+    @extend h3;
+}
+
+.orangeLink {
+    color: $link-orange;
+}
+
+@mixin base($color) {
+    position: relative;
+    min-height: 80px;
+    width: 100%;
+    background-color: $color;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+@mixin before ($color) {
+    content: ''; /* Required to display content */
+    position: absolute; /* Sets the position absolute to the top div */
+    bottom: 0;
+    left: calc(50% - 20px);
+    width: 0;
+    z-index: 1;
+    height: 0;
+    border-bottom: solid 20px $color; /* Creates the notch */
+    border-left: solid 10px transparent; /* Creates triangle effect */
+    border-right: solid 10px transparent; /* Creates triangle effect */
+}
+
+@mixin after($color) {
+    content: ''; /* Required to display content */
+    position: absolute; /* Sets the position absolute to the top div */
+    top: 0;
+    left: calc(50%);
+    width: 0;
+    z-index: 1;
+    height: 0;
+    border-top: solid 20px $color; /* Creates the notch */
+    border-left: solid 10px transparent; /* Creates triangle effect */
+    border-right: solid 10px transparent; /* Creates triangle effect */
+}
+
+.first {
+    padding-top: 0;
+}
+.white {
+    @include base($white);
+}
+
+.before-white:after {
+    @include before($white);
+}
+
+.after-white:before {
+    @include after($white);
+}
+
+.light-blue {
+    @include base($light-blue);
+}
+
+.before-light-blue:after {
+    @include before($light-blue);
+}
+
+.after-light-blue:before {
+    @include after($light-blue);
+}
+
+.blue {
+    @include base($blue);
+}
+
+.before-blue:after {
+    @include before($blue);
+}
+
+.after-blue:before {
+    @include after($blue);
+}
