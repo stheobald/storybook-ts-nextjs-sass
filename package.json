@@ -51,7 +51,7 @@
     "@types/react": "^16.9.23",
     "babel-loader": "^8.1.0",
     "fork-ts-checker-webpack-plugin": "^4.1.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "ts-loader": "^6.2.2",
     "typed-scss-modules": "^1.2.0",
     "typescript": "^3.8.3"
